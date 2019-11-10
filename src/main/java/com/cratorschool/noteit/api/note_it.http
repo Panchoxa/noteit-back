@@ -1,0 +1,9 @@
+#Get all notebooks
+GET {{host-url}}//notebooks/all
+###
+POST {{host-url}}/notebooks
+Content-Type: application/json
+
+{
+"name": "Personal"
+}
