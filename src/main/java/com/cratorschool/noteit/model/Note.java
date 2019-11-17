@@ -1,4 +1,5 @@
 package com.cratorschool.noteit.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.sun.javafx.beans.IDProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +17,7 @@ public class Note {
     private String title;
     private String text;
     //some notes may be involved to one NoteBook
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Notebook notebook;
     @Setter

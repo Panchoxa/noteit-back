@@ -1,4 +1,5 @@
 package com.cratorschool.noteit.model;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Notebook {
     private UUID id;
     private String name;
     // it includes many notes
+    @JsonManagedReference
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "notebook", cascade = CascadeType.ALL)
     private List<Note> notes;
 
