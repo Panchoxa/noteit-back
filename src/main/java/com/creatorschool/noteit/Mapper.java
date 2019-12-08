@@ -1,9 +1,9 @@
-package com.cratorschool.noteit;
-import com.cratorschool.noteit.api.viewmodel.NoteViewModel;
-import com.cratorschool.noteit.api.viewmodel.NotebookViewModel;
-import com.cratorschool.noteit.dao.NotebookDAO;
-import com.cratorschool.noteit.model.Note;
-import com.cratorschool.noteit.model.Notebook;
+package com.creatorschool.noteit;
+import com.creatorschool.noteit.api.viewmodel.NoteViewModel;
+import com.creatorschool.noteit.api.viewmodel.NotebookViewModel;
+import com.creatorschool.noteit.dao.NotebookDAO;
+import com.creatorschool.noteit.model.Note;
+import com.creatorschool.noteit.model.Notebook;
 import org.springframework.stereotype.Component;
 @Component
 public class Mapper {

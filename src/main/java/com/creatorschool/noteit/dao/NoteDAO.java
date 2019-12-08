@@ -1,5 +1,5 @@
-package com.cratorschool.noteit.dao;
-import com.cratorschool.noteit.model.Note;
+package com.creatorschool.noteit.dao;
+import com.creatorschool.noteit.model.Note;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

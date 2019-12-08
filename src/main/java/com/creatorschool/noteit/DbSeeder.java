@@ -1,8 +1,8 @@
-package com.cratorschool.noteit;
-import com.cratorschool.noteit.dao.NoteDAO;
-import com.cratorschool.noteit.dao.NotebookDAO;
-import com.cratorschool.noteit.model.Note;
-import com.cratorschool.noteit.model.Notebook;
+package com.creatorschool.noteit;
+import com.creatorschool.noteit.dao.NoteDAO;
+import com.creatorschool.noteit.dao.NotebookDAO;
+import com.creatorschool.noteit.model.Note;
+import com.creatorschool.noteit.model.Notebook;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;

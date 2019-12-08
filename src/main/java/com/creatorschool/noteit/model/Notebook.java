@@ -1,4 +1,4 @@
-package com.cratorschool.noteit.model;
+package com.creatorschool.noteit.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 

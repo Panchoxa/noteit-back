@@ -1,9 +1,8 @@
-package com.cratorschool.noteit.api;
+package com.creatorschool.noteit.api;
 
-import com.cratorschool.noteit.api.viewmodel.FeedbackViewModel;
-import com.cratorschool.noteit.mail.FeedbackSender;
+import com.creatorschool.noteit.api.viewmodel.FeedbackViewModel;
+import com.creatorschool.noteit.mail.FeedbackSender;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,8 +1,8 @@
-package com.cratorschool.noteit.api;
-import com.cratorschool.noteit.Mapper;
-import com.cratorschool.noteit.api.viewmodel.NotebookViewModel;
-import com.cratorschool.noteit.dao.NotebookDAO;
-import com.cratorschool.noteit.model.Notebook;
+package com.creatorschool.noteit.api;
+import com.creatorschool.noteit.Mapper;
+import com.creatorschool.noteit.api.viewmodel.NotebookViewModel;
+import com.creatorschool.noteit.dao.NotebookDAO;
+import com.creatorschool.noteit.model.Notebook;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 

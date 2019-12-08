@@ -1,4 +1,4 @@
-package com.cratorschool.noteit.api.viewmodel;
+package com.creatorschool.noteit.api.viewmodel;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.cratorschool.noteit.mail;
+package com.creatorschool.noteit.mail;
 
 public interface FeedbackSender {
     void sendFeedback(String from, String name, String feedback);

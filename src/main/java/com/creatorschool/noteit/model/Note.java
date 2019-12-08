@@ -1,6 +1,5 @@
-package com.cratorschool.noteit.model;
+package com.creatorschool.noteit.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.sun.javafx.beans.IDProperty;
 import lombok.Getter;
 import lombok.Setter;
 
