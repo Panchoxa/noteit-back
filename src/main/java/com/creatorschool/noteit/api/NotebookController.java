@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.ValidationException;
 import java.util.List;
 @RestController
+@CrossOrigin
 @RequestMapping("/api/notebooks") //http:localhost:8080/api/notebooks
 public class NotebookController {
     private NotebookDAO notebookDAO;

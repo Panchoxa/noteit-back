@@ -1,10 +1,30 @@
-#Get all notebooks
-GET {{host-url}}//notebooks/all
+
+#Get all Notebooks
+GET {{host-url}}/notebooks/all
+
 ###
+
 POST {{host-url}}/notebooks
 Content-Type: application/json
 
 {
-"name": "Personal"
+  "name": "Personal"
 }
 
+###
+
+# FEEDBACK
+POST {{host-url}}//feedback
+Content-Type: application/json
+
+{
+  "name": "Dan",
+  "email": "dan@gmail.com",
+  "feedback": "Your app is so cool"
+}
+###
+
+#Get all Note
+GET {{host-url}}/notes/all
+
+###

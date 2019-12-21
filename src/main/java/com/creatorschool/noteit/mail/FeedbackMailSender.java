@@ -9,14 +9,18 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class FeedbackMailSender implements FeedbackSender {
+
     private JavaMailSenderImpl mailSender;
-    public FeedbackMailSender(Environment environment){
+
+    public FeedbackMailSender(Environment environment) {
         mailSender = new JavaMailSenderImpl();
+
         mailSender.setHost(environment.getProperty("spring.mail.host"));
         mailSender.setPort(Integer.parseInt(environment.getProperty("spring.mail.port")));
         mailSender.setUsername(environment.getProperty("spring.mail.username"));
         mailSender.setPassword(environment.getProperty("spring.mail.password"));
     }
+
     @Override
     public void sendFeedback(String from, String name, String feedback) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -24,6 +28,8 @@ public class FeedbackMailSender implements FeedbackSender {
         message.setSubject("New feedback from " + name);
         message.setText(feedback);
         message.setFrom(from);
+
+        log.info("Preparing to send the feedback!");
         this.mailSender.send(message);
         log.info("Sent the feedback!");
     }
