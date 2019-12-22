@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ValidationException;
 import java.util.List;
+import java.util.UUID;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/notebooks") //http:localhost:8080/api/notebooks
@@ -30,5 +32,10 @@ public class NotebookController {
         Notebook notebookEntity = this.mapper.convertToNotebookEntity(notebookViewModel);
         this.notebookDAO.save(notebookEntity);
         return notebookEntity;
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id){
+        this.notebookDAO.deleteById(UUID.fromString(id));
     }
 }
