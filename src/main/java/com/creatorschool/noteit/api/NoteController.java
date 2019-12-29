@@ -6,12 +6,14 @@ import com.creatorschool.noteit.api.viewmodel.NoteViewModel;
 import com.creatorschool.noteit.dao.NoteDAO;
 import com.creatorschool.noteit.dao.NotebookDAO;
 import com.creatorschool.noteit.model.Note;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.creatorschool.noteit.model.Notebook;
+import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
@@ -38,5 +40,28 @@ public class NoteController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/byNotebook/(notebookId)")
+    public List<NoteViewModel> getAllByNotebookId(@PathVariable String notebookId) {
+        List<Note> notes = new ArrayList<>();
+        Optional<Notebook> notebook = this.notebookDAO.findById(UUID.fromString(notebookId));
+        if (notebook.isPresent()) {
+            notes = this.noteDAO.findAllByNotebook(notebook.get());
+        }
+        return notes.stream().map(note -> this.mapper.convertToNoteViewModel(note)).collect(Collectors.toList());
+    }
+
+    @GetMapping("/byId/{id}")
+    public NoteViewModel byId(@PathVariable String id) {
+        Optional<Note> note = this.noteDAO.findById(UUID.fromString(id));
+        if (note.isPresent()) {
+            throw new EntityNotFoundException();
+        }
+        return this.mapper.convertToNoteViewModel(note.get());
+
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id){
+        this.noteDAO.deleteById(UUID.fromString(id));
+    }
 
 }
