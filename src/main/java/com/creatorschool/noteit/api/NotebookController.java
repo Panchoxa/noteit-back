@@ -24,6 +24,7 @@ public class NotebookController {
     public List<Notebook> all(){
         return notebookDAO.findAll();
     }
+
     @PostMapping
     public Notebook save(@RequestBody NotebookViewModel notebookViewModel, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

@@ -32,4 +32,10 @@ public class Note {
         this.text = text;
         this.notebook = notebook;
     }
+    public Note(String id, String title, String text, Notebook notebook){
+        this(title, text, notebook);
+        if(id != null){
+            this.id = UUID.fromString(id);
+        }
+    }
 }
